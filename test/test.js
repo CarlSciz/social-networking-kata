@@ -67,5 +67,21 @@ describe("Social Networking Kata Tests", () => {
 
             expect(result).to.deep.equal(expectedResult)
         })
+
+        it(`Alice publishes "Wishing for more sun.", then publishes "Thankful spring is right around the corner!", Bob views Alice's timeline and sees "Wishing for more sun" and "Thankful spring is right around the corner!"`, () => {
+            const bob = new User()
+            const alice = new User()
+
+            const post1 = "Wishing for more sun."
+            const post2 = "Thankful spring is right around the corner!"
+
+            alice.publish(post1)
+            alice.publish(post2)
+
+            const result = bob.viewWall(alice)
+            const expectedResult = [post1, post2]
+
+            expect(result).to.deep.equal(expectedResult)
+        })
     })
 }) 
