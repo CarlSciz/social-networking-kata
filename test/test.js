@@ -52,7 +52,7 @@ describe("Social Networking Kata Tests", () => {
     })
 
     describe("Timeline", () => {
-        it(`Bob publishes "Looking forward to our next game!", then publishes "Hoping for a better result.", Alice views his timeline and sees "Looking forwrd to our next game!" and "Hoping for a better result."`, () => {
+        it(`Bob publishes "Looking forward to our next game!", then publishes "Hoping for a better result.", Alice views his timeline and sees "Looking forward to our next game!" and "Hoping for a better result."`, () => {
             const bob = new User()
             const alice = new User()
 
