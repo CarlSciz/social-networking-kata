@@ -11,7 +11,7 @@ describe("Social Networking Kata Tests", () => {
 
             expect(result).to.deep.equal(expectedResult)
         })
-        
+
         it(`Alice published "I love the weather today", when she views her timeline, she sees "I love the weather today"`, () => {
             const alice = new User()
             const message = "I love the weather today"
@@ -23,5 +23,18 @@ describe("Social Networking Kata Tests", () => {
 
             expect(result).to.deep.equal(expectedResult)
         })
+
+        it('Bob published "Darn! We lost!", when he views his timeline, he sees "Darn! We lost!"', () => {
+            const bob = new User()
+            const message = "Darn! We lost!"
+
+            bob.publish(message)
+
+            const result = bob.viewTimeline();
+            const expectedResult = [message]
+
+            expect(result).to.deep.equal(expectedResult)
+        })
+        
     })
 }) 
