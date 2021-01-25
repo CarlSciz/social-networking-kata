@@ -84,4 +84,21 @@ describe("Social Networking Kata Tests", () => {
             expect(result).to.deep.equal(expectedResult)
         })
     })
+
+    describe("Following", () => {
+        it(`Charlie published "I'm in New York today! Anyone want to have a coffee?" Alice follows Charlie and sees on his timeline, "I'm in New York today! Anyone want to have a coffee?"`, () => {
+            const charlie = new User()
+            const alice = new User()
+
+            const message = "I'm in New York today! Anyone want to have a coffee?"
+
+            charlie.publish(message)
+            alice.follow(charlie)
+
+            const result = alice.viewTimeline()
+            const expectedResult = [message]
+
+            expect(result).to.deep.equal(expectedResult)
+        })
+    })
 }) 
